@@ -1,9 +1,13 @@
 document.addEventListener('keydown', logKey);
 document.addEventListener('keydown', random);
+document.addEventListener('keydown',presstostart);
 
 var out='';
-
-setInterval("print()",400);
+function presstostart() {
+    setInterval("print()", "400");
+    //400毫秒產生一次字母
+    this.removeEventListener('keydown', presstostart);
+}
 function logKey(e) {
     var word=out.innerHTML.substr(-1);  
     if(e.key==word)
@@ -18,8 +22,7 @@ function random(){
     var out=String.fromCharCode(a+65);
     temp=out;
     return temp;
-    print();
-    
+
 }
 function print(){
     out=document.getElementById("Output");
