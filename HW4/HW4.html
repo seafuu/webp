@@ -1,0 +1,151 @@
+<html>
+<head>
+    <style>
+        img {
+            position: relative;
+        }
+        .line
+{
+    border-left: thick solid rgba(106, 0, 255, 0.799);
+    height:100%;
+    left: 1800px;
+    position: absolute;
+}
+        
+    </style>
+    <title>my document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="line"></div>
+    <div class="abc"></div>
+    <div class="a"></div>
+    <div class="b"></div>
+    <div class="c"></div>
+    <div class="d"></div>
+    <div class="e"></div>
+    <script type="text/javascript">
+        function rand(start, end) {
+            var r
+            n = end - start + 1 //求亂數的範圍 
+            r = Math.random() * n // 放大
+            r = Math.floor(r) // 去除小數點
+            r += start // 位移
+            return r;
+        }
+        var j = '';
+        $(document).ready(function () {
+            t1 = setInterval(function () {
+                var str = rand(1,26);
+                $(".abc").prepend('<img src="' + String.fromCharCode(str + 64) + '.jpg" id="' + str + '" class="r1" /> ');
+                if($("img").last().offset().left>1700)
+                 {
+                     alert("gameover");
+                     $(".img").stop();
+
+                 }
+                $("#" + str).animate({
+                    left: '10px'
+                }, 500);
+            }, 500);
+            
+        })
+        $(document).keydown(function (e) {
+            if ($(".r1").last().attr("id") == (e.keyCode - 64)){
+                $(".r1").last().remove();
+            }
+           
+        });
+           ////////
+           $(document).ready(function () {
+            t1 = setInterval(function () {
+                var str = rand(1,26);
+                $(".a").prepend('<img src="' + String.fromCharCode(str + 64) + '.jpg" id="' + str + '" class="r2" /> ');
+                $("#" + str).animate({
+                    left: '10px'
+                }, 500);
+            }, 500);
+        })
+        $(document).keydown(function (e) {
+            if ($(".r2").last().attr("id") == (e.keyCode - 64)){
+                $(".r2").last().remove();
+            }
+           });
+           ///////
+           $(document).ready(function () {
+            t1 = setInterval(function () {
+                var str = rand(1,26);
+                $(".b").prepend('<img src="' + String.fromCharCode(str + 64) + '.jpg" id="' + str + '" class="r3" /> ');
+                $("#" + str).animate({
+                    left: '10px'
+                }, 500);
+            }, 500);
+            console.log($(".r3").last().offset().left);
+            if($(".r3").last().offset().left>=10){
+            
+               alert("gameover");}
+        })
+        $(document).keydown(function (e) {
+            if ($(".r3").last().attr("id") == (e.keyCode - 64)){
+                $(".r3").last().remove();
+            }
+           });
+           ////////
+           $(document).ready(function () {
+            t1 = setInterval(function () {
+                var str = rand(1,26);
+                $(".c").prepend('<img src="' + String.fromCharCode(str + 64) + '.jpg" id="' + str + '" class="r4" /> ');
+                $("#" + str).animate({
+                    left: '10px'
+                }, 500);
+            }, 500);
+        })
+        $(document).keydown(function (e) {
+            if ($(".r4").last().attr("id") == (e.keyCode - 64)){
+                $(".r4").last().remove();
+            }
+           });
+           /////////
+           $(document).ready(function () {
+            t1 = setInterval(function () {
+                var str = rand(1,26);
+                $(".d").prepend('<img src="' + String.fromCharCode(str + 64) + '.jpg" id="' + str + '" class="r5" /> ');
+                $("#" + str).animate({
+                    left: '10px'
+                }, 500);
+            }, 500);
+        })
+        $(document).keydown(function (e) {
+            if ($(".r5").last().attr("id") == (e.keyCode - 64)){
+                $(".r5").last().remove();
+            }
+           });
+           /////////
+           $(document).ready(function () {
+            t1 = setInterval(function () {
+                var str = rand(1,26);
+                $(".e").prepend('<img src="' + String.fromCharCode(str + 64) + '.jpg" id="' + str + '" class="r6" /> ');
+                $("#" + str).animate({
+                    left: '10px'
+                }, 500);
+            }, 500);
+        })
+        $(document).keydown(function (e) {
+            if ($(".r6").last().attr("id") == (e.keyCode - 64)){
+                $(".r6").last().remove();
+            }
+        
+           });
+
+       
+           
+           
+           
+        
+
+</script>
+</body>
+       
+  
+</html>
