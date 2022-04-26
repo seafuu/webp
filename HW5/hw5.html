@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HW5</title>
+        <style>
+            .station{
+                border: solid 2px rgb(187, 0, 255);
+                max-width: fit-content;
+                min-width: 100px;
+            }
+            .time{
+                border:solid 2px rgb(60, 255, 0);
+                max-width: fit-content;
+            }
+            .line
+            {
+                border-left: thick solid rgba(255, 0, 0, 0.916);
+                height: 4185px;
+                left: 5px;
+                position: absolute;
+            }
+           
+            
+        </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/jquery/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("button").click(function(){
+                var url= `https://ptx.transportdata.tw/MOTC/v2/Rail/Metro/ODFare/TYMC?%24top=30&%24format=JSON`;
+                var data=$.getJSON(url);
+                data.done(function(data){
+                $("h2").append('<div class="station" id="a1">'+data[0].OriginStationName.Zh_tw+'<div>');
+                    $("h2").append('<div class="line"></div>');
+                    $("h2").append("<br></br>");
+                var currenttime=0;
+                var time=0;
+                for(var i=0;i<20;i++)
+                {
+                    
+                    currenttime=data[i].TravelTime-time;
+                    
+                    $("h2").append('<div class="time">'+currenttime+'分鐘<div>');
+                        $("h2").append("<br></br>");
+                        if(i==8){
+                            $("h2").append('票價:30元');
+                        }else
+                        $("h2").append('票價:20元');
+
+                    $("h2").append('<div class="station">'+data[i].DestinationStationName.Zh_tw+'<div>');
+                        $("h2").append("<br></br>");
+                   time=data[i].TravelTime;
+                   
+                }
+                  
+
+        
+    })
+})
+})
+    </script>
+    </head>
+    <body>
+        
+        <h1>捷運時間圖</h1>
+        
+        <h3></h3>
+        <h2></h2>
+        <button id="but">查詢</button>
+
+        
+    </body>
+    
+</html>
