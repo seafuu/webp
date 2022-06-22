@@ -1,0 +1,59 @@
+.Header{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.butimg {
+  right: 20px;
+}
+
+.log {
+  text-align: center;
+  margin: auto;
+}
+
+.Newpost {
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.img{
+  text-align: center;
+
+}
+.butimg {
+  width: 200px;
+}
+.inputpost{
+  width: 200px;
+}
+.text {
+  width: 200px;
+}
+.Sign {
+  background-color: #282c34;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+.butimg{
+  border:0;
+    background-color:#003C9D;
+    color:#fff;
+    border-radius:10px;
+    cursor:pointer;
+    width:150px;
+    
+}
+  .butimg:hover{
+    color:#003C9D;
+    background-color:rgb(243, 7, 7);
+    border:2px #003C9D solid;
+    width:100px;
+    height: 40px;
+
+}
